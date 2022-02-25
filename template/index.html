@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- google font added -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- css file added -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- bootstrap added -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>django</title>
+</head>
+<body>
+    <header> 
+      <br>
+      <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-3 mx-3 mb-lg-0">
+                  <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href="{% url 'webpage1'%}">Home</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav> 
+        <br> <br>
+        <h1 class="clr text"> Welcome To Food Network </h1>
+        <!-- nav end -->
+        <!-- second part started -->
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6 col-md-6">
+              <h1 class="clr"> <span class="color-orange"> Skip </span> The Diet, </h1>
+            <h1 class="clr">Just Eat Healthy</h1>
+            <h1 >With <span class="color-orange"> Food Network </span> </h1> <br>
+              <p class="clr">
+              </p>
+            </div>
+            <!-- image part -->
+            <div class="col-12 col-lg-6 col-md-6 mt-3">
+              <img class="img-fluid" src="{% static 'images/pic1.png' %}" alt="">
+            </div>
+          </div>
+        </div>
+    </header>
+    <br><br><br>
+  <main>
+    <!-- chief nutritionist  section -->
+    <section >
+      <div  class=" py-5  container nutritionist">
+      <div class=" row align-items-center ">
+        <!-- image division -->
+        <br>
+        <!-- others -->
+          <div class="col-12 col-lg-6 col-md-6 mt-5">
+            <h2 align-item="center">  </h2> <br>
+          <p class="size">
+               <br>
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+     <br>
+    <!-- head nutritionist  section end -->
+    <section class="py-5  container">
+      <div class="row align-items-center">
+        <!-- image -->
+        <div class="col-12 col-lg-6 col-md-6 my-4 px-4">
+        </div>
+        <!-- accordion part -->
+        </div>
+      </div>
+    </section>
+
+    <!-- customer form -->
+{% block content %}    
+  <section class="cfrom" id="subs">
+    <div class="mt-5 px-5 container justify-content-center align-items-center">
+      <form action="" method="POST" class="form-group mr-auto ml-auto ">
+        {% csrf_token %}
+        <br><br>
+        <h3 class="text-center"> Customer Subscription Form </h3> <hr> <br>
+        <br>
+        <input type="text" name="name" class="form-control" id="name" placeholder=" Enter your name" required> <br>
+        <input type="number" name="age" class="form-control" id="age" placeholder=" Enter your age" required> <br>
+        <input type="number" name="height" class="form-control" id="height" placeholder=" Enter your height in cm" required> <br>
+        <input type="number" name="weight" class="form-control" id="weight" placeholder=" Enter your weight in kg" required> <br>
+        <input type="email" name="email" class="form-control" id="email" placeholder=" Enter your email" required> <br>
+        <input type="text" name="phone" class="form-control" id="phone" placeholder=" Enter your phone" required> <br>
+        <!-- submit button -->
+        <input type="submit"  class="btn btn-info form-control" value="Submit">
+    </form>
+    <br><br>
+    </div>
+  </section>
+{% endblock %}
+  </main>     
+    <!-- footer -->
+    <footer class="d-flex justify-content-center align-items-center p-3">
+      <div>
+          <h1 class="clr"> Food Network </h1> <br> 
+          <p class="align-center color-orange"> </p>
+          <br> <br>
+      </div>
+    </footer>
+
+    <!-- bootstrap js file added -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"> </script>
+</body>
+</html>
